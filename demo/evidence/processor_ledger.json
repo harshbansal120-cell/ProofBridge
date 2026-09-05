@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "source": "Demo Processor Alpha",
+    "source_type": "PROCESSOR_ATTESTED",
+    "trust_level": "HIGH",
+    "issuer": "Demo Processor Alpha",
+    "attestation": "synthetic-demo-attestation-not-real",
+    "period": "2026-03",
+    "merchant_id": "demo-merchant-001",
+    "merchant_name": "Demo Merchant Pvt Ltd",
+    "currency": "INR",
+    "unit": "paisa",
+    "generated_at": "2026-09-04T00:00:00Z",
+    "note": "THIS IS SYNTHETIC DEMO DATA. Not real financial records."
+  },
+  "transactions": [
+    {
+      "id": "TX-DEMO-001",
+      "amount_paisa": 7240000,
+      "timestamp": "2026-03-01T10:14:23Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-001"
+    },
+    {
+      "id": "TX-DEMO-002",
+      "amount_paisa": 3820000,
+      "timestamp": "2026-03-02T14:30:11Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-002"
+    },
+    {
+      "id": "TX-DEMO-003",
+      "amount_paisa": 9110000,
+      "timestamp": "2026-03-03T09:22:45Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-003"
+    },
+    {
+      "id": "TX-DEMO-004",
+      "amount_paisa": 1560000,
+      "timestamp": "2026-03-04T16:45:30Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-004"
+    },
+    {
+      "id": "TX-DEMO-005",
+      "amount_paisa": 12450000,
+      "timestamp": "2026-03-05T11:08:17Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-005"
+    },
+    {
+      "id": "TX-DEMO-006",
+      "amount_paisa": 4670000,
+      "timestamp": "2026-03-07T13:55:42Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-006"
+    },
+    {
+      "id": "TX-DEMO-007",
+      "amount_paisa": 8340000,
+      "timestamp": "2026-03-08T08:12:33Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-001"
+    },
+    {
+      "id": "TX-DEMO-008",
+      "amount_paisa": 2190000,
+      "timestamp": "2026-03-10T15:29:56Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-007"
+    },
+    {
+      "id": "TX-DEMO-009",
+      "amount_paisa": 5530000,
+      "timestamp": "2026-03-11T10:44:19Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-008"
+    },
+    {
+      "id": "TX-DEMO-010",
+      "amount_paisa": 6780000,
+      "timestamp": "2026-03-13T17:33:28Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-003"
+    },
+    {
+      "id": "TX-DEMO-011",
+      "amount_paisa": 3950000,
+      "timestamp": "2026-03-14T12:18:41Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-009"
+    },
+    {
+      "id": "TX-DEMO-012",
+      "amount_paisa": 10280000,
+      "timestamp": "2026-03-16T09:07:54Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-010"
+    },
+    {
+      "id": "TX-DEMO-013",
+      "amount_paisa": 1870000,
+      "timestamp": "2026-03-17T14:52:36Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-002"
+    },
+    {
+      "id": "TX-DEMO-014",
+      "amount_paisa": 7690000,
+      "timestamp": "2026-03-19T11:26:48Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-011"
+    },
+    {
+      "id": "TX-DEMO-015",
+      "amount_paisa": 4120000,
+      "timestamp": "2026-03-20T16:39:12Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-005"
+    },
+    {
+      "id": "TX-DEMO-016",
+      "amount_paisa": 9450000,
+      "timestamp": "2026-03-22T08:51:27Z",
+      "status": "completed",
+      "customer_ref": "CUST-DEMO-012"
+    }
+  ]
+}

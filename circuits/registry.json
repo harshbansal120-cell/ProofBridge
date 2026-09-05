@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "description": "ProofBridge Circuit Registry — Only pre-registered, versioned circuits may execute.",
+  "proving_system": "groth16",
+  "curve": "bn128",
+  "circuits": [
+    {
+      "id": "sum_greater_than",
+      "version": "1.2.0",
+      "status": "ACTIVE",
+      "description": "Proves SUM(amounts) > threshold without revealing individual amounts or exact total",
+      "predicate": "SUM(amounts) > threshold",
+      "operation": "SUM",
+      "operator": ">",
+      "max_inputs": 16,
+      "input_schema": {
+        "private": {
+          "amounts": {
+            "type": "array",
+            "items": "uint64",
+            "length": 16,
+            "description": "Transaction amounts (pad unused slots with 0)"
+          }
+        },
+        "public": {
+          "threshold": {
+            "type": "uint64",
+            "description": "Value the sum must exceed"
+          },
+          "datasetCommitment": {
+            "type": "field",
+            "description": "Poseidon commitment to the exact transaction array subset matching padding"
+          },
+          "requestNonce": {
+            "type": "field",
+            "description": "Server-generated request nonce binding the proof strictly to the current request execution limit"
+          }
+        }
+      },
+      "output_schema": {
+        "claimResult": {
+          "type": "uint1",
+          "description": "1 if claim holds, circuit fails if claim is false"
+        }
+      },
+      "artifacts": {
+        "circom_source": "sum_greater_than/circuit.circom",
+        "r1cs": "sum_greater_than/circuit.r1cs",
+        "r1cs_sha256": "C4CAAEAD1B68A8FB77F6E8565AFC54A718ED89159C344DB4C8238F87C4F901BA",
+        "wasm": "sum_greater_than/circuit_js/circuit.wasm",
+        "wasm_sha256": "E3ABBDCCAF1778B3EBCB7CDB2A9EB0B6B4805E5E9BF98393532402308161C7BC",
+        "zkey": "sum_greater_than/circuit.zkey",
+        "zkey_sha256": "B418F13BEE6E46292D989241CF4A96B129125E5D36B6E8496DE07AD7E55A0791",
+        "verification_key": "sum_greater_than/verification_key.json",
+        "verification_key_sha256": "55A96FAC3D15E0189A7DC3AB9C04235AE569DE83909B3D7105FD3CDF2BC4F8B4"
+      },
+      "constraints": {
+        "non_linear": 677,
+        "linear": 1499,
+        "total_wires": 2194
+      },
+      "security_notes": [
+        "This circuit proves a mathematical predicate. It does NOT prove data authenticity.",
+        "Data authenticity must be established through provenance metadata (attestations, signatures).",
+        "The datasetCommitment public input binds the proof to a specific dataset using Poseidon hash",
+        "The requestNonce verifies explicitly against the executing session",
+        "v1.2.0 strictly enforces > inequality and 64-bit bounds per input."
+      ]
+    },
+
+    {
+      "id": "average_less_than",
+      "version": "1.0.0",
+      "status": "PLANNED",
+      "description": "Proves AVG(amounts) < threshold using integer-safe formulation: SUM(amounts) < threshold * count",
+      "predicate": "AVG(amounts) < threshold",
+      "operation": "AVERAGE",
+      "operator": "<",
+      "max_inputs": 20,
+      "artifacts": {},
+      "security_notes": [
+        "Uses SUM < threshold * N formulation to avoid field division",
+        "Same authenticity limitations as sum_greater_than"
+      ]
+    },
+    {
+      "id": "count_greater_than",
+      "version": "1.0.0",
+      "status": "PLANNED",
+      "description": "Proves COUNT(transactions) > threshold",
+      "predicate": "COUNT(transactions) > threshold",
+      "operation": "COUNT",
+      "operator": ">",
+      "max_inputs": 20,
+      "artifacts": {},
+      "security_notes": [
+        "Requires boolean assertion mapping per slot"
+      ]
+    },
+    {
+      "id": "age_greater_than",
+      "version": "1.0.0",
+      "status": "PLANNED",
+      "description": "Proves AGE > threshold safely",
+      "predicate": "AGE(subject) > threshold",
+      "operation": "AGE",
+      "operator": ">",
+      "max_inputs": 1,
+      "artifacts": {},
+      "security_notes": [
+        "Typically requires credential-based issuance rather than raw ledger ZK"
+      ]
+    }
+  ]
+}

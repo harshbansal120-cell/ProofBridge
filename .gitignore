@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# ZK artifacts (large binaries - keep in repo for hackathon)
+# circuits/**/*.ptau  # uncomment if ptau files get too large
+
+# Secrets
+*.pem
+*.key
+!*.verification_key.json
+demo/uploads/
+
+.demo_processor_private_key.pem

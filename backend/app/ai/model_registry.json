@@ -1,0 +1,34 @@
+{
+  "models": [
+    {
+      "id": "qwen:0.5b",
+      "provider": "open_source",
+      "runtime": "ollama",
+      "roles": ["INTENT_EXTRACTION", "CLAIM_COMPILATION", "EVIDENCE_MAPPING", "PRIVACY_STRATEGY", "CRITIC"],
+      "enabled": true,
+      "license": "Qwen-Research",
+      "status": "EXPERIMENTAL",
+      "description": "Small rapid deterministic instruction following."
+    },
+    {
+      "id": "qwen2.5:1.5b",
+      "provider": "open_source",
+      "runtime": "ollama",
+      "roles": ["INTENT_EXTRACTION", "CLAIM_COMPILATION", "EVIDENCE_MAPPING", "PRIVACY_STRATEGY", "CRITIC"],
+      "enabled": true,
+      "license": "Apache 2.0",
+      "status": "EXPERIMENTAL",
+      "description": "Small rapid deterministic instruction following."
+    },
+    {
+      "id": "llama3.2",
+      "provider": "open_source",
+      "runtime": "ollama",
+      "roles": ["INTENT_EXTRACTION", "CLAIM_COMPILATION", "EVIDENCE_MAPPING", "PRIVACY_STRATEGY", "CRITIC"],
+      "enabled": true,
+      "license": "Llama 3.2",
+      "status": "EXPERIMENTAL",
+      "description": "General purpose compliance logic."
+    }
+  ]
+}
